@@ -1,0 +1,12 @@
+#!/bin/bash
+
+if [ -z "$1" ]; then
+  echo "Usage: $0 <tag>"
+  exit 1
+fi
+
+TAG=$1
+
+mvn clean && mvn package -Dmaven.test.skip=true
+
+docker build -t martin0313/barklb:"$TAG" .

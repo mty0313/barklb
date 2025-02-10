@@ -1,0 +1,18 @@
+server:
+  port: 8081
+
+spring:
+  application:
+    name: barklb
+  datasource:
+    url: jdbc:sqlite:database.db
+    driver-class-name: org.sqlite.JDBC
+  jpa:
+    database-platform: org.hibernate.community.dialect.SQLiteDialect
+    hibernate:
+      ddl-auto: update # 或 create-drop，用于自动管理表结构
+    show-sql: false # 开启 SQL 日志
+
+bark:
+  remote:
+    urls: https://api.day.app
